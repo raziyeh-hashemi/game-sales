@@ -12,7 +12,7 @@ class GetGreaterEuroData(APIView):
 
         if not query_greater_eu:
             return StandardizedResponse(success=False, status_code=404,
-                                        message='OOPS! There is no game with this platform in this year')
+                                        message='OOPS! There is no game with Eu-sales greater than NA-sales')
         serializer = DataSalesSerializer(query_greater_eu, many=True)
         return StandardizedResponse(success=True, status_code=200, data=serializer.data,
-                                    message='The games with requested year and platform are found successfully')
+                                    message='The games with Eu-sales greater than NA-sales are found successfully')
