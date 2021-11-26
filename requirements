@@ -4,3 +4,4 @@ djangorestframework-jwt==1.11.0
 python-dotenv==0.17.0
 drf-spectacular==0.17.3
 djangorestframework==3.12.4
+django-filter==21.1
