@@ -18,7 +18,7 @@ class GetDataByYear(APIView):
                 break
         if not query_by_year:
             return StandardizedResponse(success=False, status_code=404,
-                                        message='OOPS! There is no game with this platform')
+                                        message='OOPS! There is no game with this year')
         serializer = DataSalesSerializer(query_by_year, many=True)
         return StandardizedResponse(success=True, status_code=200, data=serializer.data,
-                                    message='The games with requested platform are found successfully')
+                                    message='The games with requested year are found successfully')
