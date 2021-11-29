@@ -6,6 +6,7 @@ from rest_framework.views import Response
 from django.shortcuts import render
 from django.views.generic import View
 import json
+import random
 
 
 class CompareGamesView(View):
@@ -31,12 +32,17 @@ class CompareGamesChartData(APIView):
         serializer2 = DataSalesSerializer(query_name2, many=True).data
 
         # create the data
+        number_of_colors = 5
+
+        colors = ["#"+''.join([random.choice('0123456789ABCDEF') for j in range(6)])
+                for i in range(number_of_colors)]
+
         backgroundColor = {
-                        "NA_sales":'rgba(255, 99, 132, 1)',
-                        "EU_sales":'rgba(54, 162, 235, 1)',
-                        "JP_sales":'rgba(255, 206, 86, 1)',
-                        "other_sales":'rgba(75, 192, 192, 1)',
-                        "global_sales":'rgba(153, 102, 255, 1)',
+                        "NA_sales": colors[0],
+                        "EU_sales": colors[1],
+                        "JP_sales": colors[2],
+                        "other_sales": colors[3],
+                        "global_sales": colors[4],
                     }
         labels = [name1, name2]
         data = {"NA_sales":[],"EU_sales":[],"JP_sales":[],"other_sales":[],"global_sales":[]}

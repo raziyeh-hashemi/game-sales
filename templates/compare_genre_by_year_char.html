@@ -3,15 +3,12 @@
 {% block jquery %}
 <script>
     $(document).ready(function(data){
-        var publisher1 = data["publisher1"]
-        var publisher2 = data["publisher2"]
         var start_year = data["start_year"]
         var end_year = data["end_year"]
-        var endpoint = 'http://127.0.0.1:8000/api/analyse_sales/compare_publisher_by_year/{{publisher1}}/{{publisher2}}/{{start_year}}/{{end_year}}/'
+        var endpoint = 'http://127.0.0.1:8000/api/analyse_sales/compare_genre_by_year/{{start_year}}/{{end_year}}/'
         var defaultData = []
         var labels = [];
-        // Set amount of categories
-        var length = 20;
+        var label = "";
         var colors = [];
         $.ajax({
             
@@ -19,7 +16,9 @@
             url: endpoint,
             success: function(data){
                 labels = data.labels
-                defaultData = JSON.parse(data.default)
+                defaultData = data.default
+                colors = data.colors
+                label = data.label
                 setChart()
             },
             error: function(error_data){
@@ -31,10 +30,15 @@
         function setChart(){
             var ctx = document.getElementById("myChart");
             var myChart = new Chart(ctx, {
-            type: 'line',
+            type: 'bar',
             data: {
                 labels: labels,
-                datasets: defaultData
+                datasets: [{
+                    label : label,
+                    data: defaultData,
+                    backgroundColor : colors,
+                    borderWidth: 1
+                }]
             },
             options: {
                 scales: {
@@ -56,7 +60,7 @@
 
 <div class='row'>
     <div class='col-sm-12''>
-        <h1>Compare Publisher Between Two Year</h1>
+        <h1>Compare Sales Of Each Genre Between Two Year</h1>
         <div class='col-sm-6'>
             <canvas id="myChart" width="400" height="400"></canvas>
         </div>
