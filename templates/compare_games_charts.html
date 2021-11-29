@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block jquery %}
+<script>
+    $(document).ready(function(data){
+        var name1 = data["name1"]
+        var name2 = data["name2"]
+        var endpoint = 'http://127.0.0.1:8000/api/analyse_sales/compare_game/{{name1}}/{{name2}}/'
+        var defaultData = []
+        var labels = [];
+        $.ajax({
+            method: "GET",
+            url: endpoint,
+            success: function(data){
+                labels = data.labels
+                defaultData = JSON.parse(data.default)
+                setChart()
+            },
+            error: function(error_data){
+                console.log("error")
+                // console.log(error_data)
+            }
+        })
+
+        function setChart(){
+            var ctx = document.getElementById("myChart");
+            var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: defaultData
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero:true
+                        }
+                    }]
+                }
+            }
+        });
+        }
+    })
+
+</script>
+{% endblock jquery %}
+
+{% block content %}
+
+<div class='row'>
+    <div class='col-sm-12''>
+        <h1>Compare Two Game</h1>
+        <div class='col-sm-6'>
+            <canvas id="myChart" width="400" height="400"></canvas>
+        </div>
+        <!-- <div class='col-sm-6'>
+            <canvas id="myChart2" width="400" height="400"></canvas>
+        </div> -->
+
+
+    </div>
+</div>
+
+{% endblock content %}
