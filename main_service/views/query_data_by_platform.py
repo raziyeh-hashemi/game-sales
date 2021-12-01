@@ -2,9 +2,11 @@ from rest_framework.views import APIView
 from utils.response_handler import StandardizedResponse
 from main_service.models.data_sales import DataSales
 from main_service.serializers.data_sales import DataSalesSerializer
+from rest_framework.permissions import IsAuthenticated
 
 
 class GetDataByPlatform(APIView):
+    permission_classes = (IsAuthenticated,)
 
     def get(self, request, platform, pk):
         query_by_all_platform = DataSales.objects.filter(platform=platform)

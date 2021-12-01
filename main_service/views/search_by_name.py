@@ -2,9 +2,12 @@ from rest_framework.views import APIView
 from utils.response_handler import StandardizedResponse
 from main_service.models.data_sales import DataSales
 from main_service.serializers.data_sales import DataSalesSerializer
+from rest_framework.permissions import IsAuthenticated
 
 
 class SearchByName(APIView):
+    permission_classes = (IsAuthenticated,)
+    ordering_fields = '__all__'
 
     def get(self, request, name):
         query_contain_name = DataSales.objects.filter(name__contains=name)

@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 # from main_service.views.home import home_view
+from rest_framework.authtoken import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,4 +24,8 @@ urlpatterns = [
     # Base App
     path('api/data_sales/', include('main_service.urls')),
     path('api/analyse_sales/', include('analysis_service.urls')),
+    path('api/auth_token/', views.obtain_auth_token),
+    path('api-auth', include('rest_framework.urls')),
+    path('api/user/', include('user.urls')),
+
 ]

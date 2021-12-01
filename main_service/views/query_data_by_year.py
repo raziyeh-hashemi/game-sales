@@ -2,9 +2,11 @@ from rest_framework.views import APIView
 from utils.response_handler import StandardizedResponse
 from main_service.models.data_sales import DataSales
 from main_service.serializers.data_sales import DataSalesSerializer
+from rest_framework.permissions import IsAuthenticated
 
 
 class GetDataByYear(APIView):
+    permission_classes = (IsAuthenticated,)
 
     def get(self, request, year, pk):
         query_by_all_year = DataSales.objects.filter(year=year)
