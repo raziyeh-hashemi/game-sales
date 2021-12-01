@@ -11,6 +11,7 @@ import random
 
 class CompareGamesView(View):
     def get(self, request, *args, **kwargs):
+        print(kwargs)
         return render(request, 'compare_games_charts.html',kwargs)
 
 class CompareGamesChartData(APIView):

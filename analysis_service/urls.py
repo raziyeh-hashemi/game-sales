@@ -5,8 +5,8 @@ from analysis_service.views.compare_publisher_by_year import ComparePublisherByY
 from analysis_service.views.compare_genre_by_year import CompareGenreByYearChartData, CompareGenreByYearView
 
 urlpatterns = [
-    path('compare_game/chart/<str:name1>/<str:name2>/', CompareGamesView.as_view(), name='compare_two_game'),
-    path('compare_game/<str:name1>/<str:name2>/', CompareGamesChartData.as_view()),
+    path('compare_game/chart/<path:name1>_<path:name2>/', CompareGamesView.as_view(), name='compare_two_game'),
+    path('compare_game/<path:name1>_<path:name2>/', CompareGamesChartData.as_view()),
     path('compare_sale_by_year/chart/<int:start_year>/<int:end_year>/', CompareSaleByYearView.as_view(), name='compare_sale_by_year'),
     path('compare_sale_by_year/<int:start_year>/<int:end_year>/', CompareSaleByYearChartData.as_view()),
     path('compare_publisher_by_year/chart/<str:publisher1>/<str:publisher2>/<int:start_year>/<int:end_year>/', ComparePublisherByYearView.as_view(), name='compare_publisher_by_year'),
