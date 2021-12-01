@@ -1,20 +1,25 @@
 from utils.response_handler import StandardizedResponse
 from main_service.models.data_sales import DataSales
 from main_service.serializers.data_sales import DataSalesSerializer
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.views import APIView
 from rest_framework.views import Response
 from django.shortcuts import render
 from django.views.generic import View
 import random
 
+
 class CompareSaleByYearView(View):
+    permission_classes = (IsAuthenticated,)
+
     def get(self, request, *args, **kwargs):
-        return render(request, 'compare_sale_year_chart.html',kwargs)
+        return render(request, 'compare_sale_year_chart.html', kwargs)
+
 
 class CompareSaleByYearChartData(APIView):
+    permission_classes = (IsAuthenticated,)
     authentication_classes = []
     permission_classes = []
-    
 
     def get(self, request, start_year, end_year):
         end_year += 1
@@ -38,12 +43,12 @@ class CompareSaleByYearChartData(APIView):
 
         number_of_colors = len(default_items)
 
-        colors = ["#"+''.join([random.choice('0123456789ABCDEF') for j in range(6)])
-                for i in range(number_of_colors)]
+        colors = ["#" + ''.join([random.choice('0123456789ABCDEF') for j in range(6)])
+                  for i in range(number_of_colors)]
 
         data = {
-                "labels": labels,
-                "default": default_items,
-                "colors" : colors
+            "labels": labels,
+            "default": default_items,
+            "colors": colors
         }
         return Response(data)

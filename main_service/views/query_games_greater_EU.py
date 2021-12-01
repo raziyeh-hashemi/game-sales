@@ -3,9 +3,11 @@ from utils.response_handler import StandardizedResponse
 from django.db.models import F
 from main_service.models.data_sales import DataSales
 from main_service.serializers.data_sales import DataSalesSerializer
+from rest_framework.permissions import IsAuthenticated
 
 
 class GetGreaterEuroData(APIView):
+    permission_classes = (IsAuthenticated,)
 
     def get(self, request):
         query_greater_eu = DataSales.objects.filter(EU_sales__gt=F('NA_sales'))
