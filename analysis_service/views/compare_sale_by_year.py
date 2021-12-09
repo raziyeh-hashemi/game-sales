@@ -19,7 +19,7 @@ class CompareSaleByYearView(View):
 class CompareSaleByYearChartData(APIView):
     permission_classes = (IsAuthenticated,)
     authentication_classes = []
-    permission_classes = []
+    # permission_classes = []
 
     def get(self, request, start_year, end_year):
         end_year += 1
