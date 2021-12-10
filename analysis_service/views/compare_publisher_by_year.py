@@ -19,8 +19,6 @@ class ComparePublisherByYearView(View):
 
 class ComparePublisherByYearChartData(APIView):
     permission_classes = (IsAuthenticated,)
-    authentication_classes = []
-    permission_classes = []
 
     def get(self, request, publisher1, publisher2, start_year, end_year):
         # query the names

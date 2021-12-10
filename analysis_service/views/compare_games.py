@@ -18,7 +18,6 @@ class CompareGamesView(View):
 
 
 class CompareGamesChartData(APIView):
-    authentication_classes = []
     permission_classes = (IsAuthenticated,)
 
     def get(self, request, name1, name2):
