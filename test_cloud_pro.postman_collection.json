@@ -1,0 +1,479 @@
+{
+	"info": {
+		"_postman_id": "e65a40b0-7992-48fd-b4f9-04b3bf01d3c0",
+		"name": "test_cloud_pro",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "search by platform",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token e6025e13972677f0c874287bd1ce954cea2de281",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/data_sales/search_by_platform/Wii/5/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"data_sales",
+						"search_by_platform",
+						"Wii",
+						"5",
+						""
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search by rank",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token e6025e13972677f0c874287bd1ce954cea2de281",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/data_sales/search_by_rank/100/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"data_sales",
+						"search_by_rank",
+						"100",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search by year",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token e6025e13972677f0c874287bd1ce954cea2de281",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/data_sales/search_by_year/2000/10/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"data_sales",
+						"search_by_year",
+						"2000",
+						"10",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search by genre",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token e6025e13972677f0c874287bd1ce954cea2de281",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/data_sales/search_by_genre/Sports/10/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"data_sales",
+						"search_by_genre",
+						"Sports",
+						"10",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "best games in platform and year",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token e6025e13972677f0c874287bd1ce954cea2de281",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/data_sales/best_games/PS3/2010/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"data_sales",
+						"best_games",
+						"PS3",
+						"2010",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search by greater Euro",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token e6025e13972677f0c874287bd1ce954cea2de281",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/data_sales/search_by_greater_euro/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"data_sales",
+						"search_by_greater_euro",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search by name",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token e6025e13972677f0c874287bd1ce954cea2de281",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/data_sales/search_by_name/Mario/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"data_sales",
+						"search_by_name",
+						"Mario",
+						""
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all data",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token e6025e13972677f0c874287bd1ce954cea2de281",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/data_sales/all_data/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"data_sales",
+						"all_data",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "compare two game",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token a68cd50473f6adb59d259b8aafb1ba8f9af3e306",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/analyse_sales/compare_game/chart/Wii Sports/Duck Hunt/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"analyse_sales",
+						"compare_game",
+						"chart",
+						"Wii Sports",
+						"Duck Hunt",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "compare sales by year",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token a68cd50473f6adb59d259b8aafb1ba8f9af3e306",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/analyse_sales/compare_sale_by_year/chart/2000/2010/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"analyse_sales",
+						"compare_sale_by_year",
+						"chart",
+						"2000",
+						"2010",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Compare Publisher Between Two Year",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token a68cd50473f6adb59d259b8aafb1ba8f9af3e306",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/analyse_sales/compare_publisher_by_year/chart/Sega/Sega/2010/1998/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"analyse_sales",
+						"compare_publisher_by_year",
+						"chart",
+						"Sega",
+						"Sega",
+						"2010",
+						"1998",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Compare Sales Of Each Genre Between Two Year",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token a68cd50473f6adb59d259b8aafb1ba8f9af3e306",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/analyse_sales/compare_genre_by_year/chart/1998/2013/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"analyse_sales",
+						"compare_genre_by_year",
+						"chart",
+						"1998",
+						"2013",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sign in",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "razi",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/user/sign_in/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"sign_in",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
