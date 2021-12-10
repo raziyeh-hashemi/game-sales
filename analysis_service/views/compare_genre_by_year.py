@@ -20,9 +20,6 @@ class CompareGenreByYearView(View):
 class CompareGenreByYearChartData(APIView):
     permission_classes = (IsAuthenticated,)
 
-    authentication_classes = []
-    permission_classes = []
-
     def get(self, request, start_year, end_year):
         # query the names
         query_data = DataSales.objects.filter(year__range=(start_year, end_year))
