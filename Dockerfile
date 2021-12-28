@@ -4,6 +4,9 @@ ENV PYTHONUNBUFFERED 1
 
 WORKDIR /app
 COPY requirements .
-RUN apt update && pip install -U pip && pip install -r requirements
+RUN apt-get update && pip install -U pip && pip install -r requirements
 COPY . .
 EXPOSE 8000
+
+
+

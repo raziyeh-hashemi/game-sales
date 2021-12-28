@@ -1,28 +1,11 @@
 version: "3.2"
 
 services:
-  db:
-    image: postgres:14-alpine
-    container_name: game_sales
-    environment: 
-    - POSTGRES_DB=game_sales
-    - POSTGRES_USER=game_sales
-    - POSTGRES_PASSWORD='123456'
-    ports:
-      - "5432"
-
   web:
     build: .
-    command: python manage.py runserver 0.0.0.0:8000
+    command: python3 manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/main_service
     ports:
       - "8000:8000"
-    environment:
-      - DB_HOST=db
-      - DB_NAME=game_sales
-      - DB_USER=game_sales
-      - DB_PASS='123456'
-    depends_on:
-      - db
       

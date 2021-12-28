@@ -13,3 +13,4 @@ class DataSales(models.Model):
     JP_sales = models.FloatField(null=False)
     other_sales = models.FloatField(null=False)
     global_sales = models.FloatField(null=False)
+    
