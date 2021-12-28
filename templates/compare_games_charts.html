@@ -5,7 +5,7 @@
     $(document).ready(function(data){
         var name1 = data["name1"]
         var name2 = data["name2"]
-        var endpoint = 'http://127.0.0.1:8000/api/analyse_sales/compare_game/{{name1}}/{{name2}}/'
+        var endpoint = '/api/analyse_sales/compare_game/{{name1}}/{{name2}}/'
         var defaultData = []
         var labels = [];
         $.ajax({
