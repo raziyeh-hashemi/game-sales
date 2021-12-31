@@ -4,8 +4,6 @@ services:
     image: dockersamples/visualizer
     networks:
       - game-sales
-    volumes:
-      - /var/run/docker.sock:/vat/run/docker.stock
     depends_on:
       - main
       - analyze
@@ -15,12 +13,10 @@ services:
         constraints: [node.role == manager]
 
     ports:
-      - "8001"
+      - "8001:8001"
 
   main:
     image: ghazals1121/swarm_phase2:main
-    build: .
-    command: python3 manage.py runserver 0.0.0.0:8000
     networks:
       - game-sales
     deploy:
@@ -30,8 +26,6 @@ services:
 
   analyze:
     image: ghazals1121/swarm_phase3
-    build: .
-    command: python3 manage.py runserver 0.0.0.0:8002
     networks:
       - game-sales
     depends_on:
@@ -43,4 +37,3 @@ services:
 
 networks:
   game-sales:
-

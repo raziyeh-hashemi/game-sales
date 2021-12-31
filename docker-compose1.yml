@@ -1,0 +1,40 @@
+version: "3.3"
+services:
+  analytics:
+    build: ./analysis_service
+    image: analytics-service
+    ports:
+      - '8080'
+    deploy:
+      replicas: 2
+    depends_on:
+      - main-service
+    networks:
+      - main-service-network
+
+  main-service:
+    build: ./main_service
+    command: python3 manage.py runserver 0.0.0.0:8000
+    image: main-service
+    ports:
+      - '8000'
+    deploy:
+      replicas: 2
+    networks:
+      - main-service-network
+
+
+  visualizer:
+    image: dockersamples/visualizer
+    ports:
+      - '8585:8080'
+    volumes:
+      - /var/run/docker.sock:/vat/run/docker.stock
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+
+networks:
+  main-service-network:
+
+
